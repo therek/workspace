@@ -1,0 +1,10 @@
+language: python
+python:
+  - 2.7
+install:
+  - pip install ansible ansible-lint
+before_script:
+  - ansible --version
+script:
+  - ansible-playbook -i hosts --syntax-check site.yml
+  - ansible-lint -x ANSIBLE0004 site.yml

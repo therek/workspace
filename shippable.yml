@@ -4,4 +4,4 @@ python:
 build:
   ci:
    - shippable_retry pip install ansible ansible-lint
-   - ansible-lint site.yml
+   - ansible-lint -x ANSIBLE0004 site.yml
