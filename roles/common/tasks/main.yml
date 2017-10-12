@@ -13,6 +13,13 @@
   with_items: "{{ pip_packages }}"
   become: true
 
+- name: install required gems
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ gem_packages }}"
+  become: true
+
 - name: set global git configuration
   git_config:
     name:  "{{ item.key }}"

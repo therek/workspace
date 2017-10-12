@@ -17,6 +17,9 @@ brew_packages:
 pip_packages:
   - ansible-lint
 
+gem_packages:
+  - travis
+
 atom_packages:
   - file-icons
   - vim-mode-plus
