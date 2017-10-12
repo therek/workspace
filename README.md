@@ -14,4 +14,4 @@ It can:
   in `atom_packages` variable).
 * Install Powerline shell prompt for Bash.
 
-To start setup run `setup.sh` script.
+To begin setup run `setup.sh` script.

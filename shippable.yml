@@ -7,7 +7,7 @@ build:
    - ansible-lint -x ANSIBLE0004 site.yml
 integrations:
   notifications:
-    - integrationName: slack
+    - integrationName: slack-notify
       type: slack
       recipients:
         - "#ci"
