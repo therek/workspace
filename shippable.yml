@@ -5,3 +5,9 @@ build:
   ci:
    - shippable_retry pip install ansible ansible-lint
    - ansible-lint -x ANSIBLE0004 site.yml
+integrations:
+  notifications:
+    - integrationName: slack
+      type: slack
+      recipients:
+        - "#ci"
