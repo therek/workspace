@@ -1,5 +1,8 @@
 # therek's workspace setup scripts
 
+[![Build Status](https://travis-ci.org/therek/workspace.svg?branch=master)](https://travis-ci.org/therek/workspace)
+[![Run Status](https://api.shippable.com/projects/59dfaa79f7ca690700e8e3c4/badge?branch=master)](https://app.shippable.com/github/therek/workspace)
+
 A bit of code to set up my workspace. Currently it supports Mac OS X and
 Ubuntu operating systems only.
 
