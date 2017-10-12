@@ -1,0 +1,21 @@
+---
+- name: import tasks for ubuntu
+  import_tasks: ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+- name: import tasks for mac os
+  import_tasks: mac.yml
+  when: ansible_os_family == 'Darwin'
+
+- name: install required pip packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pip_packages }}"
+  become: true
+
+- name: set global git configuration
+  git_config:
+    name:  "{{ item.key }}"
+    value: "{{ item.value }}"
+    scope: global
+  with_items: "{{ git_configuration }}"

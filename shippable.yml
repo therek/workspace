@@ -1,0 +1,7 @@
+language: python
+python:
+  - 2.7
+build:
+  ci:
+   - shippable_retry pip install ansible ansible-lint
+   - ansible-lint site.yml

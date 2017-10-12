@@ -1,0 +1,6 @@
+---
+- name: install required brew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ brew_packages }}"

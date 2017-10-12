@@ -1,0 +1,41 @@
+---
+- name: load OS dependent variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+
+- name: clone powerline/fonts repository
+  git:
+    repo: https://github.com/powerline/fonts.git
+    dest: ~/.powerline-fonts
+    depth: 1
+- name: install powerline/fonts
+  command: ~/.powerline-fonts/install.sh
+  args:
+    creates: "{{ font_dir }}/Inconsolata for Powerline.otf"
+
+- name: fetch Python's USER_BASE variable
+  command: python -c 'import site; print site.USER_BASE'
+  register: python_userbase
+  changed_when: False
+- name: install powerline-shell
+  pip:
+    name: powerline-shell
+    state: present
+    extra_args: '--user'
+- name: create bash_powerline configuration file
+  copy:
+    content: |
+      function _update_ps1() {
+          PS1="$({{ python_userbase.stdout }}/bin/powerline-shell $?)"
+      }
+      if [ "$TERM" != "linux" ]; then
+          PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+      fi
+    dest: ~/.bash_powerline
+  run_once: yes
+- name: source bash_powerline in {{ bashrc }}
+  lineinfile:
+    path: "{{ bashrc }}"
+    line: '. ~/.bash_powerline'

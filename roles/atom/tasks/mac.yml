@@ -1,0 +1,7 @@
+---
+- name: fetch package for mac
+  unarchive:
+    src: https://atom.io/download/mac
+    dest: /Applications/
+    creates: /Applications/Atom.app
+    remote_src: yes

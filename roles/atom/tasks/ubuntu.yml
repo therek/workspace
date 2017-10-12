@@ -1,0 +1,9 @@
+---
+- name: fetch package for apt
+  command: wget https://atom.io/download/deb -O /tmp/atom.deb
+  args:
+    creates: /tmp/atom.deb
+
+- name: install apt package
+  apt:
+    deb: /tmp/atom.deb

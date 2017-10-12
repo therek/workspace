@@ -1,0 +1,10 @@
+---
+# Configure therek's personal workspace
+
+- name: configure workspace
+  hosts: all
+  connection: local
+  roles:
+    - common
+    - atom
+    - prompt

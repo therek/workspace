@@ -1,0 +1,34 @@
+apt_packages:
+  - htop
+  - wget
+  - mc
+  - git
+
+brew_packages:
+  - htop-osx
+  - wget
+  - midnight-commander
+  - rbenv
+  - rbenv-bundle-exec
+  - rbenv-bundler
+  - rbenv-bundler-ruby-version
+  - ruby-build
+
+pip_packages:
+  - ansible-lint
+
+atom_packages:
+  - file-icons
+  - vim-mode-plus
+  - language-puppet
+  - language-docker
+
+git_configuration:
+- key:   core.editor
+  value: vim
+- key:   merge.tool
+  value: vimdiff
+- key:   color.ui
+  value: auto
+- key:   diff.submodule
+  value: log

@@ -1,0 +1,13 @@
+---
+- name: import tasks for ubuntu
+  import_tasks: ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+- name: import tasks for mac os
+  import_tasks: mac.yml
+  when: ansible_os_family == 'Darwin'
+
+- name: install module packages
+  shell: apm list --bare | grep '^{{ item }}' && echo 'already installed' || apt install {{ item }}
+  with_items: "{{ atom_packages }}"
+  register: apm_result
+  changed_when: "'already installed' not in apm_result.stdout"
