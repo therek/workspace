@@ -14,11 +14,12 @@
   become: true
 
 - name: install required gems
-  pip:
+  gem:
     name: "{{ item }}"
     state: present
   with_items: "{{ gem_packages }}"
   become: true
+  user_install: no
 
 - name: set global git configuration
   git_config:

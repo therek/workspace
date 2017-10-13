@@ -19,6 +19,7 @@ pip_packages:
 
 gem_packages:
   - travis
+  - bolt
 
 atom_packages:
   - file-icons
