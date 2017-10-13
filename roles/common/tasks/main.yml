@@ -17,9 +17,9 @@
   gem:
     name: "{{ item }}"
     state: present
+    user_install: no
   with_items: "{{ gem_packages }}"
   become: true
-  user_install: no
 
 - name: set global git configuration
   git_config:
