@@ -13,6 +13,7 @@ brew_packages:
   - rbenv-bundler
   - rbenv-bundler-ruby-version
   - ruby-build
+  - telnet
 
 pip_packages:
   - ansible-lint
