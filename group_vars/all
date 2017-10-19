@@ -27,6 +27,7 @@ atom_packages:
   - vim-mode-plus
   - language-puppet
   - language-docker
+  - language-terraform
 
 git_configuration:
 - key:   core.editor
