@@ -19,8 +19,9 @@ pip_packages:
   - ansible-lint
 
 gem_packages:
-  - travis
   - bolt
+  - inspec
+  - travis
 
 atom_packages:
   - file-icons

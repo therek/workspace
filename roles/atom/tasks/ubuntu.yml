@@ -7,3 +7,4 @@
 - name: install apt package
   apt:
     deb: /tmp/atom.deb
+  become: true
