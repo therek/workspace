@@ -3,6 +3,7 @@ apt_packages:
   - wget
   - mc
   - git
+  - jq
 
 brew_packages:
   - htop-osx
@@ -15,6 +16,7 @@ brew_packages:
   - ruby-build
   - telnet
   - hugo
+  - jq
 
 pip_packages:
   - ansible-lint
