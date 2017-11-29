@@ -4,6 +4,7 @@ apt_packages:
   - mc
   - git
   - jq
+  - tmux
 
 brew_packages:
   - htop-osx
@@ -17,6 +18,7 @@ brew_packages:
   - telnet
   - hugo
   - jq
+  - tmux
 
 pip_packages:
   - ansible-lint
