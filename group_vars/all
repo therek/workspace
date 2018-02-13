@@ -23,6 +23,7 @@ brew_packages:
 pip_packages:
   - ansible-lint
   - mkdocs
+  - mkdocs-material
 
 gem_packages:
   - bolt
