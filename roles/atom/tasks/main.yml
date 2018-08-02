@@ -7,7 +7,7 @@
   when: ansible_os_family == 'Darwin'
 
 - name: install module packages
-  shell: apm list --bare | grep '^{{ item }}' && echo 'already installed' || apt install {{ item }}
+  shell: apm list --bare | grep '^{{ item }}' && echo 'already installed' || apm install {{ item }}
   with_items: "{{ atom_packages }}"
   register: apm_result
   changed_when: "'already installed' not in apm_result.stdout"
