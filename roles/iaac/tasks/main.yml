@@ -1,0 +1,4 @@
+---
+- name: import tasks for mac os
+  import_tasks: mac.yml
+  when: ansible_os_family == 'Darwin'

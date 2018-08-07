@@ -1,0 +1,3 @@
+---
+iaac_terraform_version: 0.11.7
+iaac_terraform_url: "https://releases.hashicorp.com/terraform/{{iaac_terraform_version}}/terraform_{{iaac_terraform_version}}_{{ansible_os_family|lower}}_amd64.zip"

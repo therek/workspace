@@ -6,6 +6,13 @@
   import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
 
+- name: create minimal directory structure
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - "{{ lookup('env', 'HOME') }}/bin"
+
 - name: install required pip packages
   pip:
     name: "{{ item }}"
