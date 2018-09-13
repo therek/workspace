@@ -5,3 +5,10 @@
     dest: "{{ lookup('env', 'HOME') }}/bin"
     remote_src: yes
     creates: "{{ lookup('env', 'HOME') }}/bin/terraform"
+
+- name: "Download Vault v{{ iaac_vault_version }}"
+  unarchive:
+    src: "{{ iaac_vault_url }}"
+    dest: "{{ lookup('env', 'HOME') }}/bin"
+    remote_src: yes
+    creates: "{{ lookup('env', 'HOME') }}/bin/vault"
