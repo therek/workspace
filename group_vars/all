@@ -46,3 +46,5 @@ git_configuration:
   value: auto
 - key:   diff.submodule
   value: log
+- key:   fetch.prune
+  value: true
