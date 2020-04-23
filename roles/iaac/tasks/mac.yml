@@ -12,3 +12,10 @@
     dest: "{{ lookup('env', 'HOME') }}/bin"
     remote_src: yes
     creates: "{{ lookup('env', 'HOME') }}/bin/vault"
+
+- name: "Download Nomad v{{ iaac_nomad_version }}"
+  unarchive:
+    src: "{{ iaac_nomad_url }}"
+    dest: "{{ lookup('env', 'HOME') }}/bin"
+    remote_src: yes
+    creates: "{{ lookup('env', 'HOME') }}/bin/nomad"
