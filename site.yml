@@ -6,6 +6,6 @@
   connection: local
   roles:
     - common
-    - atom
+    - vscode
     - prompt
     - iaac

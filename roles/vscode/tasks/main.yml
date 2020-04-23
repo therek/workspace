@@ -1,0 +1,11 @@
+---
+- name: 'Load OS dependent variables'
+  include_vars: "{{ ansible_os_family }}.yml"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+
+- name: 'Copy settings file'
+  copy:
+    src: 'settings.json'
+    dest: '~/Library/Application Support/Code/User'
