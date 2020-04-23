@@ -1,0 +1,6 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.tabSize": 2
+}
