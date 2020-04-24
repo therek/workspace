@@ -20,13 +20,20 @@ brew_packages:
   - jq
   - tmux
 
+yum_packages:
+  - git
+  - jq
+  - libstdc++-devel
+  - ruby-devel
+  - tmux
+  - wget
+
 pip_packages:
   - ansible-lint
   - mkdocs
   - mkdocs-material
 
 gem_packages:
-  - bolt
   - inspec
   - travis
 

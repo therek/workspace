@@ -1,0 +1,6 @@
+---
+- name: install required yum packages
+  package:
+     name: "{{ yum_packages }}"
+     state: present
+  become: true

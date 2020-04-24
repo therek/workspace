@@ -8,4 +8,4 @@
 - name: 'Copy settings file'
   copy:
     src: 'settings.json'
-    dest: '~/Library/Application Support/Code/User'
+    dest: "{{ settings_dir }}"

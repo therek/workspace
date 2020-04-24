@@ -56,10 +56,18 @@ function install_ubuntu() {
   run_ansible
 }
 
+function install_fedora() {
+  set_git_user
+  install_bin pip     'sudio yum -y install python3-pip'
+  install_bin ansible 'sudo pip install ansible'
+  run_ansible
+}
+
 function install_linux() {
   DISTNAME=`lsb_release -si`
   case $DISTNAME in
     'Ubuntu') install_ubuntu ;;
+    'Fedora') install_fedora ;;
     *)        unsupported $DISTNAME ;;
   esac
 }

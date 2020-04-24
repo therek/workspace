@@ -2,6 +2,9 @@
 - name: import tasks for ubuntu
   import_tasks: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
+- name: import tasks for fedora
+  import_tasks: fedora.yml
+  when: ansible_distribution == 'Fedora'
 - name: import tasks for mac os
   import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
@@ -15,9 +18,8 @@
 
 - name: install required pip packages
   pip:
-    name: "{{ item }}"
+    name: "{{ pip_packages }}"
     state: present
-  with_items: "{{ pip_packages }}"
   become: true
 
 - name: install required gems
