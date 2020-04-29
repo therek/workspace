@@ -1,4 +1,21 @@
 ---
-- name: import tasks for mac os
-  import_tasks: mac.yml
-  when: ansible_os_family == 'Darwin'
+- name: "Download Terraform v{{ iaac_terraform_version }}"
+  unarchive:
+    src: "{{ iaac_terraform_url }}"
+    dest: "{{ lookup('env', 'HOME') }}/bin"
+    remote_src: yes
+    creates: "{{ lookup('env', 'HOME') }}/bin/terraform"
+
+- name: "Download Vault v{{ iaac_vault_version }}"
+  unarchive:
+    src: "{{ iaac_vault_url }}"
+    dest: "{{ lookup('env', 'HOME') }}/bin"
+    remote_src: yes
+    creates: "{{ lookup('env', 'HOME') }}/bin/vault"
+
+- name: "Download Nomad v{{ iaac_nomad_version }}"
+  unarchive:
+    src: "{{ iaac_nomad_url }}"
+    dest: "{{ lookup('env', 'HOME') }}/bin"
+    remote_src: yes
+    creates: "{{ lookup('env', 'HOME') }}/bin/nomad"
