@@ -7,5 +7,8 @@
 
 - name: 'Copy settings file'
   copy:
-    src: 'settings.json'
+    src: "{{ item }}"
     dest: "{{ settings_dir }}"
+  with_items:
+    - 'settings.json'
+    - 'keybindings.json'
